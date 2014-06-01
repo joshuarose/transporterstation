@@ -12,9 +12,30 @@ feature 'Home page' do
   end
   scenario "should have organization sign-up" do
     visit root_path
-    click_link 'Organization'
     within '#organization' do
-      click_link 'Sign Up'
+      click_link 'Register'
     end
+    expect(page).to have_content('Organization Sign Up')
+  end
+  scenario "should have organization log-in" do
+    visit root_path
+    within '#organization' do
+      click_link 'Login'
+    end
+    expect(page).to have_content('Organization Sign In')
+  end
+  scenario "should have volunteer sign-up" do
+    visit root_path
+    within '#volunteer' do
+      click_link 'Register'
+    end
+    expect(page).to have_content('Volunteer Sign Up')
+  end
+  scenario "should have volunteer log-in" do
+    visit root_path
+    within '#volunteer' do
+      click_link 'Login'
+    end
+    expect(page).to have_content('Volunteer Sign In')
   end
 end
