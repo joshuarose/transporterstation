@@ -1,0 +1,48 @@
+<h2>Dog Listing, woof</h2>
+<table id='dog-table' class='table table-bordered table-striped'>
+  <thead>
+    <tr>
+      <td>
+        Name
+      </td>
+      <td>
+        Weight
+      </td>
+      <td>
+        Gender
+      </td>
+      <td>
+        Age
+      </td>
+      <td>
+        Breed
+      </td>
+      <td>
+        Location
+      </td>
+    </tr>
+  </thead>
+  <% @dogs.each do |d| %>
+  <tr>
+    <td>
+      <%= link_to d.name, dog_path(d.id) %>
+    </td>
+    <td>
+      <%= d.weight %>
+    </td>
+    <td>
+      <%= d.gender %>
+    </td>
+    <td>
+      <%= d.age %>
+    </td>
+    <td>
+      <%= d.breed %>
+    </td>
+    <td>
+      <%= d.location %>
+    </td>
+  </tr>
+
+  <% end  %>
+</table>

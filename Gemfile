@@ -21,6 +21,7 @@ end
 
 group :development do
   gem 'spring'
+  gem 'faker'
 end
 
 group :test do
@@ -28,4 +29,5 @@ group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'faker'
 end
