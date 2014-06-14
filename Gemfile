@@ -14,14 +14,19 @@ gem 'pundit'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'carrierwave'
+gem 'mini_magick'
+gem 'rails_12factor', group: :production
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
+group :development, :test do
+  gem 'faker'
+end
+
 group :development do
   gem 'spring'
-  gem 'faker'
 end
 
 group :test do
@@ -29,5 +34,4 @@ group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'faker'
 end

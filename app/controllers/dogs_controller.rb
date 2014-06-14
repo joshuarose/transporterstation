@@ -11,12 +11,16 @@ class DogsController < ApplicationController
   end
 
   def create
-    flash[:success] = "Dog created"
-    redirect_to dogs_path
+    if Dog.create(dog_params)
+      flash[:success] = "Dog created"
+      redirect_to dogs_path
+    end
   end
 
   private
     def dog_params
-      params.require(:dog).permit(:id)
+      params.require(:dog)
+        .permit(:id, :image, :name,
+                :weight, :gender, :isolate, :age)
     end
 end
