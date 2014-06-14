@@ -15,7 +15,11 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'unicorn'
 gem 'rails_12factor', group: :production
+gem 'fog'
+gem 'nokogiri'
+
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
