@@ -18,8 +18,7 @@ gem 'mini_magick'
 gem 'unicorn'
 gem 'rails_12factor', group: :production
 gem 'fog'
-gem 'nokogiri'
-
+gem 'nokogiri', '1.6.1'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'

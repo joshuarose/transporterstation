@@ -8,6 +8,8 @@
       <%= f.input :gender, collection: [:Male, :Female] %>
       <%= f.input :isolate, collection: [:True, :False] %>
       <%= f.input :age, required: true %>
+      <%= f.input :breed, collection: [:pitbull, :sheltie, :doge] %>
+      <%= f.input :location, required: true %>
       <%= f.file_field :image %>
     </div>
     <div class="form-actions col-md-4 col-md-offset-4">
