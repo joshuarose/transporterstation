@@ -225,7 +225,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick
   nokogiri (= 1.6.1)
-  pg
+  pg (= 0.17.1)
   pundit
   rails (= 4.1.2)
   rails_12factor
