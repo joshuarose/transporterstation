@@ -1,12 +1,44 @@
-<% @legs.each do |leg| %>
-  <table>
+<% javascript_tag do %>
+  window.legs = @legs
+<% end %>
+<div class="row black-viewport">
+  <div id="multi_markers"></div>
+</div>
+<table class="table table-striped">
+  <tr>
+    <th>
+      Description
+    </th>
+    <th>
+      Address
+    </th>
+    <th>
+      City
+    </th>
+    <th>
+      State
+    </th>
+    <th>
+      Zip
+    </th>
+  </tr>
+  <% @legs.each do |leg| %>
     <tr>
-      <th>
-        Description
-      </th>
       <td>
         <%= leg.description %>
       </td>
+      <td>
+        <%= leg.address %>
+      </td>
+      <td>
+        <%= leg.city %>
+      </td>
+      <td>
+        <%= leg.state %>
+      </td>
+      <td>
+        <%= leg.zip %>
+      </td>
     </tr>
-  </table>
-<% end %>
+  <% end %>
+</table>

@@ -20,6 +20,10 @@ gem 'unicorn'
 gem 'rails_12factor', group: :production
 gem 'fog'
 gem 'nokogiri', '1.6.1'
+gem 'gmaps4rails'
+gem 'lodash-rails'
+gem "geocoder"
+gem 'gon'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
@@ -27,6 +31,7 @@ end
 
 group :development, :test do
   gem 'faker'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -34,7 +39,6 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
