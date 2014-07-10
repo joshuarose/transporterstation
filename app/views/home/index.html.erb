@@ -1,5 +1,6 @@
-<div class="row">
-  <div id="dog-carousel" class="carousel slide col-md-12" data-ride="carousel">
+<br />
+<div class="container">
+  <div id="dog-carousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#dog-carousel" data-slide-to="0" class="active"></li>
@@ -11,48 +12,67 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <div class="inner-item">
-          <%= image_tag 'step_1.jpg', class: "carousel-img " %>
+          <%= image_tag 'step_1.jpg', alt: "Transporter Station" %>
           <div class="carousel-caption">
+            <h3>Rescues create a transport</h3>
             <p>
-              Rescues create a transport
+              "Saving one dog will not change the world...
+               But surely, for that one dog
+               the world will change forever"
             </p>
           </div>
-        </div>
       </div>
       <div class="item">
-        <div class="inner-item">
-          <%= image_tag 'step_2.jpg', class: "carousel-img "  %>
+          <%= image_tag 'http://extremecss.com/demos/bs_carousel/images/img1.jpg', alt: "Transporter Station"  %>
           <div class="carousel-caption">
-            Rescues add dogs
+            <h3>Rescues add dogs</h3>
+            <p>
+              "Saving one dog will not change the world...
+               But surely, for that one dog
+               the world will change forever"
+            </p>
           </div>
-        </div>
       </div>
       <div class="item">
-        <div class="inner-item">
-          <%= image_tag 'step_3.jpg', class: "carousel-img "  %>
+          <%= image_tag 'step_2.jpg', alt: "Transporter Station"  %>
           <div class="carousel-caption">
-            Rescues add stops
+            <h3>Rescues add dogs</h3>
+            <p>
+              "Saving one dog will not change the world...
+               But surely, for that one dog
+               the world will change forever"
+            </p>
           </div>
-        </div>
       </div>
       <div class="item">
-        <div class="inner-item">
-          <%= image_tag 'step_4.jpg', class: "carousel-img"  %>
+          <%= image_tag 'step_3.jpg', alt: "Transporter Station"  %>
           <div class="carousel-caption">
-            Volunteers sign-up for stops
+            <h3>Rescues add stops</h3>
+            <p>
+              "Saving one dog will not change the world...
+               But surely, for that one dog
+               the world will change forever"
+            </p>
           </div>
-        </div>
+      </div>
+      <div class="item">
+          <%= image_tag 'step_4.jpg', alt: "Transporter Station"  %>
+          <div class="carousel-caption">
+            <h3>Volunteers sign-up for stops</h3>
+            <p>
+              "Saving one dog will not change the world...
+               But surely, for that one dog
+               the world will change forever"
+            </p>
+          </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="well">
-    <blockquote class="">
-      "Saving one dog will not change the world...
-       But surely, for that one dog
-       the world will change forever"
-    </blockquote>
+    <!--controls-->
+    <a class="left carousel-control" href="#dog-carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#dog-carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
   </div>
 </div>
