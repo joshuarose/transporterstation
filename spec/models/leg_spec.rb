@@ -22,4 +22,6 @@ describe Leg do
   it "should have a zip" do
     expect(leg.respond_to?('zip')).to eq(true)
   end
+
+  it { should belong_to :transport}
 end

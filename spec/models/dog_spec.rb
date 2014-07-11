@@ -34,4 +34,6 @@ describe Dog do
   it "should have breed" do
     expect(dog.respond_to?('breed')).to eq(true)
   end
+
+  it { should belong_to :transport}
 end

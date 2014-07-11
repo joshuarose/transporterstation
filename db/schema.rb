@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710202825) do
+ActiveRecord::Schema.define(version: 20140711134831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,10 @@ ActiveRecord::Schema.define(version: 20140710202825) do
     t.integer  "age"
     t.string   "location"
     t.string   "breed"
+    t.integer  "transport_id"
   end
+
+  add_index "dogs", ["transport_id"], name: "index_transport_id", using: :btree
 
   create_table "legs", force: true do |t|
     t.string   "description"
@@ -39,7 +42,10 @@ ActiveRecord::Schema.define(version: 20140710202825) do
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "transport_id"
   end
+
+  add_index "legs", ["transport_id"], name: "index_legs_transport_id", using: :btree
 
   create_table "organizations", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -66,6 +72,11 @@ ActiveRecord::Schema.define(version: 20140710202825) do
 
   add_index "organizations", ["email"], name: "index_organizations_on_email", unique: true, using: :btree
   add_index "organizations", ["reset_password_token"], name: "index_organizations_on_reset_password_token", unique: true, using: :btree
+
+  create_table "transports", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
