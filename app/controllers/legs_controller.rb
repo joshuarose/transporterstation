@@ -1,17 +1,22 @@
 class LegsController < ApplicationController
+  before_action :set_transport
   def index
-    @legs = Leg.all
-    gon.legs = @legs
+    @legs = @transport.legs
+    gon.legs = @transport.legs
   end
 
   def new
-    @leg = Leg.new
+    @leg = @transport.legs.build
   end
 
   def create
-    if Leg.create(leg_params)
+    @leg = @transport.legs.build(leg_params)
+    if @leg.save
       flash[:success] = "Leg created"
-      redirect_to legs_path
+      redirect_to transport_legs_path(@transport)
+    else
+      flash[:error] = "Error creating leg"
+      redirect_to transport_legs_path(@transport)
     end
   end
 
@@ -19,6 +24,10 @@ class LegsController < ApplicationController
     def leg_params
       params.require(:leg)
         .permit(:id, :description, :address,
-                :city, :state, :zip)
+                :city, :state, :zip, :transport_id)
+    end
+
+    def set_transport
+      @transport = Transport.find(params[:transport_id])
     end
 end

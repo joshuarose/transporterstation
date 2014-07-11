@@ -1,11 +1,12 @@
 require 'spec_helper'
 
 feature "page lists dogs" do
-  let!(:dog1) {FactoryGirl.create(:dog)}
-  let!(:dog2) {FactoryGirl.create(:dog)}
+  let!(:transport) {FactoryGirl.create(:transport)}
+  let!(:dog1) {FactoryGirl.create(:dog, transport_id: transport.id)}
+  let!(:dog2) {FactoryGirl.create(:dog, transport_id: transport.id)}
 
   before do
-    visit dogs_path
+    visit transport_dogs_path(transport)
   end
 
   scenario "should have dog's name" do
@@ -48,11 +49,5 @@ feature "page lists dogs" do
       expect(page).to have_content(dog1.breed)
       expect(page).to have_content(dog2.breed)
     end
-  end
-
-  scenario "should be able to click dog" do
-      click_link "#{dog1.name}"
-      expect(page).to have_content(dog1.name)
-      expect(page).not_to have_content(dog2.name)
   end
 end

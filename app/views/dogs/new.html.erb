@@ -1,6 +1,6 @@
 <h2 class='col-md-4 col-md-offset-4'>New Pooch</h2>
 <div class="row">
-  <%= simple_form_for(@dog, url: dogs_path(@dog),
+  <%= simple_form_for(@dog, url: transport_dogs_path(@transport),
   defaults: { wrapper_html: { class: 'form-group'},
               input_html: { class: 'form-control'} }) do |f| %>
     <div class="form-inputs col-md-4 col-md-offset-4">

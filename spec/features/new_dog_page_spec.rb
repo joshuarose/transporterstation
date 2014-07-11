@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 feature 'new dog page' do
+  let!(:test_transport) { FactoryGirl.create(:transport) }
 
   before do
-    visit new_dog_path
+    visit new_transport_dog_path(test_transport.id)
   end
 
   scenario "filling out form with valid data" do
