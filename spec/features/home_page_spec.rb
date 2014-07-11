@@ -8,7 +8,7 @@ feature 'Home page' do
   end
   scenario 'should have logo' do
     visit root_path
-    expect(page).to have_css('#logo')
+    expect(page).to have_css('.logo-text')
   end
   scenario "should have organization sign-up" do
     visit root_path

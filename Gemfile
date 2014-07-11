@@ -24,6 +24,7 @@ gem 'gmaps4rails'
 gem 'lodash-rails'
 gem "geocoder"
 gem 'gon'
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'

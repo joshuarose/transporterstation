@@ -9,12 +9,13 @@ feature 'new dog page' do
   scenario "filling out form with valid data" do
     fill_in "Name", with: "Prescott"
     fill_in "Weight", with: "50 lbs"
-    attach_file 'Image', 'assets/images/logo.jpg'
+    # TODO: attaching files
+    # attach_file('image', File.join(Rails.root, 'public', 'images', 'logo.jpg'))
     select('True', from: 'Isolate')
     select('Male', from: 'Gender')
     fill_in "Age", with: 8
     fill_in "Location", with: "123 Main Street"
-    fill_in "Breed", with: "Mix"
+    select('doge', from: 'Breed')
     click_button "Create"
     expect(page).to have_content("Dog created")
   end
