@@ -1,5 +1,5 @@
 <div class="row">
-  <div id="dog-carousel" class="carousel slide black-viewport" data-ride="carousel">
+  <div id="dog-carousel" class="carousel slide black-viewport hidden-xs" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#dog-carousel" data-slide-to="0" class="active"></li>
@@ -12,7 +12,7 @@
     <div class="carousel-inner">
       <div class="item active">
           <div class="inner-item">
-            <%= image_tag 'step_1.jpg', alt: "Transporter Station" %>
+            <%= image_tag 'step_1.jpg', alt: "Transporter Station", class: "img-responsive" %>
             <div class="carousel-caption">
               <h3>Rescues create a transport</h3>
             </div>
@@ -20,7 +20,7 @@
       </div>
       <div class="item">
           <div class="inner-item">
-            <%= image_tag 'step_2.jpg', alt: "Transporter Station"  %>
+            <%= image_tag 'step_2.jpg', alt: "Transporter Station", class: "img-responsive"  %>
             <div class="carousel-caption">
               <h3>Rescues add dogs</h3>
             </div>
@@ -28,7 +28,7 @@
       </div>
       <div class="item">
           <div class="inner-item">
-            <%= image_tag 'step_3.jpg', alt: "Transporter Station"  %>
+            <%= image_tag 'step_3.jpg', alt: "Transporter Station", class: "img-responsive"  %>
             <div class="carousel-caption">
               <h3>Rescues add stops</h3>
             </div>
@@ -36,7 +36,7 @@
       </div>
       <div class="item">
           <div class="inner-item">
-            <%= image_tag 'step_4.jpg', alt: "Transporter Station"  %>
+            <%= image_tag 'step_4.jpg', alt: "Transporter Station", class: "img-responsive"  %>
             <div class="carousel-caption">
               <h3>Volunteers sign-up for stops</h3>
             </div>
