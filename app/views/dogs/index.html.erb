@@ -4,6 +4,9 @@
   <thead>
     <tr>
       <td>
+        Photo
+      </td>
+      <td>
         Name
       </td>
       <td>
@@ -25,6 +28,9 @@
   </thead>
   <% @dogs.each do |d| %>
   <tr>
+    <td>
+      <%= image_tag(d.image_url(:small_thumb)) if d.image? %>
+    </td>
     <td>
       <%= link_to d.name, dog_path(d.id) %>
     </td>

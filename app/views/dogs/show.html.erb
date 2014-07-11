@@ -1,3 +1,63 @@
-<h1>Dog Details</h1>
-<h2><%= @dog.name %></h2>
-<%= image_tag(@dog.image_url) if @dog.image? %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+    <% if @dog.image? %>
+      <%= image_tag(@dog.image_url(:thumb), class: "dog-image") if @dog.image? %>
+    <% else %>
+      <%= image_tag "dog-placeholder.png", class: "dog-image" %>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <table class="table table-bordered">
+      <tr>
+        <td>
+          Name
+        </td>
+        <td>
+          <%= @dog.name %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Weight
+        </td>
+        <td>
+          <%= @dog.weight %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Gender
+        </td>
+        <td>
+          <%= @dog.gender %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Age
+        </td>
+        <td>
+          <%= @dog.age %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Breed
+        </td>
+        <td>
+          <%= @dog.breed %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Location
+        </td>
+        <td>
+          <%= @dog.location %>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
