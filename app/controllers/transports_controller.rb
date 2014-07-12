@@ -1,4 +1,6 @@
 class TransportsController < ApplicationController
+  before_action :authenticate_organization!, only: [:new, :create]
+  
   def index
     @transports = Transport.all
   end

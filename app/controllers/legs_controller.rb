@@ -1,5 +1,7 @@
 class LegsController < ApplicationController
   before_action :set_transport
+  before_action :authenticate_organization!, only: [:new, :create]
+  
   def index
     @legs = @transport.legs
     gon.legs = @transport.legs

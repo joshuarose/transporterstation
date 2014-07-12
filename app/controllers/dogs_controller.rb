@@ -1,9 +1,11 @@
 class DogsController < ApplicationController
   before_action :set_transport
+  before_action :authenticate_organization!, only: [:new, :create]
 
   def index
     @dogs = @transport.dogs
   end
+  
   def show
     @dog = Dog.find(params[:id])
   end
