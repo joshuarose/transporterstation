@@ -1,7 +1,9 @@
 <div class="row black-viewport">
   <div id="multi_markers"></div>
 </div>
-<%= link_to "Create", new_transport_leg_url(@transport), class: "btn btn-success"%>
+<% if organization_signed_in? %>
+  <%= link_to "Create", new_transport_leg_url(@transport), class: "btn btn-success"%>
+<% end  %>
 <table class="table table-striped">
   <tr>
     <th>

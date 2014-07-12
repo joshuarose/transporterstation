@@ -1,5 +1,7 @@
 <h2 class='col-md-4 col-md-offset-4'>Dog Listing, Woof</h2>
-<%= link_to "Create", new_transport_dog_url(@transport), class: "btn btn-success"%>
+<% if organization_signed_in? %>
+  <%= link_to "Create", new_transport_dog_url(@transport), class: "btn btn-success"%>
+<% end  %>
 <table id='dog-table' class='table table-bordered table-striped'>
   <thead>
     <tr>
