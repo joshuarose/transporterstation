@@ -34,7 +34,7 @@
       <%= image_tag(d.image_url(:small_thumb)) if d.image? %>
     </td>
     <td>
-      <%= link_to d.name, transport_dog_path(d.id, @transport) %>
+      <%= link_to d.name, transport_dog_path(@transport, d.id) %>
     </td>
     <td>
       <%= d.weight %>

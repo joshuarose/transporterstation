@@ -1,3 +1,138 @@
 <h1>Transport</h1>
 
 <%= @transport.start_time.to_s(:short_time) %>
+<table class="table table-bordered">
+  <tr>
+    <td>
+      Organization:
+    </td>
+    <td>
+      <%= @transport.organization.organization_name %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Contact:
+    </td>
+    <td>
+      <%= @transport.organization.contact_name %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Phone:
+    </td>
+    <td>
+      <%= @transport.organization.phone %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Email:
+    </td>
+    <td>
+      <%= @transport.organization.email %>
+    </td>
+  </tr>
+</table>
+
+<h4>Dogs</h4>
+<ul>
+
+    <table class="table table-bordered">
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Breed
+        </th>
+        <th>
+          Weight
+        </th>
+        <th>
+          Isolate?
+        </th>
+      </tr>
+      <% @transport.dogs.each do |dog| %>
+      <tr>
+        <td>
+          <%= dog.name %>
+        </td>
+        <td>
+          <%= dog.breed %>
+        </td>
+        <td>
+          <%= dog.weight %>
+        </td>
+        <td>
+          <%= dog.isolate %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+</ul>
+
+<h4>Legs</h4>
+<table class="table table-bordered">
+  <tr>
+    <th>
+      Description
+    </th>
+    <th>
+      Address
+    </th>
+    <th>
+      City
+    </th>
+    <th>
+      State
+    </th>
+    <th>
+      Zip
+    </th>
+    <th>
+      Driver
+    </th>
+    <th>
+      Driver Email
+    </th>
+    <th>
+      Driver Phone
+    </th>
+    <th>
+      Driver Car
+    </th>
+  </tr>
+  <% @transport.legs.each do |leg| %>
+    <tr>
+      <td>
+        <%= leg.description %>
+      </td>
+      <td>
+        <%= leg.address %>
+      </td>
+      <td>
+        <%= leg.city %>
+      </td>
+      <td>
+        <%= leg.state %>
+      </td>
+      <td>
+        <%= leg.zip %>
+      </td>
+      <td>
+        <%= leg.user.name if leg.user %>
+      </td>
+      <td>
+        <%= leg.user.email if leg.user %>
+      </td>
+      <td>
+        <%= leg.user.phone if leg.user %>
+      </td>
+      <td>
+        <%= leg.user.car_description if leg.user %>
+      </td>
+    </tr>
+  <% end  %>
+</table>

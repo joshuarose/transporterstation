@@ -5,7 +5,7 @@ class DogsController < ApplicationController
   def index
     @dogs = @transport.dogs
   end
-  
+
   def show
     @dog = Dog.find(params[:id])
   end
@@ -29,7 +29,7 @@ class DogsController < ApplicationController
     def dog_params
       params.require(:dog)
         .permit(:id, :image, :name,
-                :weight, :gender, :isolate, :age, :breed, :location)
+                :weight, :gender, :isolate, :age, :breed, :location, :transport_id)
     end
     def set_transport
       @transport = Transport.find(params[:transport_id])

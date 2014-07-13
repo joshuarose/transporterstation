@@ -1,5 +1,5 @@
 class TransportsController < ApplicationController
-  before_action :authenticate_organization!, only: [:new, :create]
+  before_action :authenticate_organization!, only: [:new, :create, :show]
 
   def index
     @transports = Transport.all
@@ -15,7 +15,9 @@ class TransportsController < ApplicationController
 
   def create
     @transport = Transport.create(transport_params)
+    #Adjust time to UTC
     @transport.start_time = Time.zone.parse(@transport.start_time.to_s(:long))
+    @transport.organization = current_organization
     if @transport.save
       flash[:success] = "Transport created"
       redirect_to transports_path
