@@ -1,6 +1,6 @@
 class TransportsController < ApplicationController
   before_action :authenticate_organization!, only: [:new, :create]
-  
+
   def index
     @transports = Transport.all
   end
@@ -10,7 +10,9 @@ class TransportsController < ApplicationController
   end
 
   def create
-    if Transport.create(transport_params)
+    @transport = Transport.new(transport_params)
+    @transport.start_time = @transport.start
+    if @transport.save
       flash[:success] = "Transport created"
       redirect_to transports_path
     end

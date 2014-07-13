@@ -1,37 +1,39 @@
 <div class="row">
-  <% if organization_signed_in? %>
-    <%= link_to "Create", new_transport_url(@transport), class: "btn btn-success"%>
-  <% end  %>
-  <table class="table table-bordered">
-    <tr>
-      <th>
-        Run Date
-      </th>
-      <th>
-        Start Time
-      </th>
-      <th>
-        Dogs
-      </th>
-      <th>
-        Legs
-      </th>
-    </tr>
-    <% @transports.each do |transport| %>
-    <tr>
-      <td>
-        <%= transport.run_date %>
-      </td>
-      <td>
-        <%= transport.start_time %>
-      </td>
-      <td>
-        <%= link_to "Dogs", transport_dogs_path(transport), class: "btn btn-success" %>
-      </td>
-      <td>
-        <%= link_to "Legs", transport_legs_path(transport), class: "btn btn-success" %>
-      </td>
-    </tr>
-    <% end %>
-  </table>
+  <div class="col-md-12">
+    <% if organization_signed_in? %>
+      <%= link_to "Create", new_transport_url(@transport), class: "btn btn-success"%>
+    <% end  %>
+    <table class="table table-bordered">
+      <tr>
+        <th>
+          Run Date
+        </th>
+        <th>
+          Start Time
+        </th>
+        <th>
+          Dogs
+        </th>
+        <th>
+          Legs
+        </th>
+      </tr>
+      <% @transports.each do |transport| %>
+      <tr>
+        <td>
+          <%= transport.run_date %>
+        </td>
+        <td>
+          <%= transport.start_time.to_s(:short_time) %>
+        </td>
+        <td>
+          <%= link_to "Dogs", transport_dogs_path(transport), class: "btn btn-success" %>
+        </td>
+        <td>
+          <%= link_to "Legs", transport_legs_path(transport), class: "btn btn-success" %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
