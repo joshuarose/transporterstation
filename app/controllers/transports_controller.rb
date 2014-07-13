@@ -9,6 +9,10 @@ class TransportsController < ApplicationController
     @transport = Transport.new
   end
 
+  def show
+    @transport = Transport.find(params[:id])
+  end
+
   def create
     @transport = Transport.create(transport_params)
     @transport.start_time = Time.zone.parse(@transport.start_time.to_s(:long))

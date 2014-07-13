@@ -21,7 +21,7 @@
       <% @transports.each do |transport| %>
       <tr>
         <td>
-          <%= transport.run_date %>
+          <%= link_to transport.run_date, transport %>
         </td>
         <td>
           <%= Time.zone.parse(transport.start_time.to_s).to_s(:short_time) if transport.start_time %>
