@@ -1,7 +1,7 @@
 class LegsController < ApplicationController
   before_action :set_transport
   before_action :authenticate_organization!, only: [:new, :create]
-  
+
   def index
     @legs = @transport.legs
     gon.legs = @transport.legs
@@ -18,6 +18,15 @@ class LegsController < ApplicationController
       redirect_to transport_legs_path(@transport)
     else
       flash[:error] = "Error creating leg"
+      redirect_to transport_legs_path(@transport)
+    end
+  end
+
+  def sign_up
+    @leg = @transport.legs.find(params[:leg_id])
+    @leg.user = current_user
+    if @leg.save
+      flash[:success] = "You're good people"
       redirect_to transport_legs_path(@transport)
     end
   end

@@ -21,6 +21,9 @@
     <th>
       Zip
     </th>
+    <th>
+      Volunteer
+    </th>
   </tr>
   <% @legs.each do |leg| %>
     <tr>
@@ -38,6 +41,17 @@
       </td>
       <td>
         <%= leg.zip %>
+      </td>
+      <td>
+        <% if leg.user %>
+          <%= leg.user.name %>
+        <% elsif user_signed_in? %>
+          <%= button_to "Sign up", transport_leg_volunteer_path(@transport, leg), method: :get %>
+        <% else %>
+          <p>
+            No Volunteer
+          </p>
+        <% end %>
       </td>
     </tr>
   <% end %>
