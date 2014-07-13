@@ -2,8 +2,13 @@ require 'spec_helper'
 
 feature 'new dog page' do
   let!(:test_transport) { FactoryGirl.create(:transport) }
+  let!(:test_organization) { FactoryGirl.create(:organization) }
 
   before do
+    visit new_organization_session_path
+    fill_in "Email", with: test_organization.email
+    fill_in "Password", with: "abcd1234!"
+    click_button "Sign in"
     visit new_transport_dog_path(test_transport.id)
   end
 
