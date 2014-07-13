@@ -25,6 +25,7 @@ gem 'lodash-rails'
 gem "geocoder"
 gem 'gon'
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'browser-timezone-rails'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'

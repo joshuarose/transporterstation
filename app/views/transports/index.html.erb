@@ -24,7 +24,7 @@
           <%= transport.run_date %>
         </td>
         <td>
-          <%= transport.start_time.to_s(:short_time) %>
+          <%= Time.zone.parse(transport.start_time.to_s).to_s(:short_time) if transport.start_time %>
         </td>
         <td>
           <%= link_to "Dogs", transport_dogs_path(transport), class: "btn btn-success" %>

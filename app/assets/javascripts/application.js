@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require gmaps/google
 //= require bootstrap
+//= require browser_timezone_rails/application.js
 //= require_tree .

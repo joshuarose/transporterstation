@@ -31,6 +31,9 @@ GEM
     bcrypt (3.1.7)
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
+    browser-timezone-rails (0.0.7)
+      jquery-rails
+      rails (>= 3.1)
     builder (3.2.2)
     capybara (2.4.1)
       mime-types (>= 1.16)
@@ -233,6 +236,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  browser-timezone-rails
   capybara
   carrierwave
   codeclimate-test-reporter
