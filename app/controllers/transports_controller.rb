@@ -16,6 +16,7 @@ class TransportsController < ApplicationController
   def create
     @transport = Transport.create(transport_params)
     #Adjust time to UTC
+    @transport.run_date = Date.strptime(transport_params[:run_date],"%m/%d/%Y")
     @transport.start_time = Time.zone.parse(@transport.start_time.to_s(:long))
     @transport.organization = current_organization
     if @transport.save

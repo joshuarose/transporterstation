@@ -13,6 +13,7 @@
 //= require lodash
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require gmaps/google
 //= require bootstrap
 //= require browser_timezone_rails/application.js
